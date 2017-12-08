@@ -1,0 +1,10 @@
+Push CSUMB folder to github
+My git remote is GitCSUMB
+
+First make you way to the directory of the CSUMB folder on my desktop.
+
+git add .
+
+git commit -m "Message"
+
+git push -u GitCSUMB master
