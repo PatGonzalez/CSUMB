@@ -1,10 +1,8 @@
-#Lab 14 Files In Python
-#Patrick Gonzalez
+#Mini-Lab: Adding on to the HTML Lab
+#Patrick GOnzalez
 
-
-    
 #########################################################################################################333    
-#Problem 1
+# Green Eggs and Ham Word Count Problem from Lab 14
 #Rumor has it that the literary classic Green Eggs and Ham was written because Dr. Seuss's publisher bet him he couldn't write a book using only 50 words.  
 #Write a Python program that opens the file Eggs.txt (containing the entire text of Green Eggs and Ham) and verifies this urban legend by doing the following:
 #Create a count of how many total words appear in Green Eggs and Ham
@@ -12,7 +10,7 @@
 #Print out the total count and the count for each of the words. 
 #Print out the most commonly occuring word in the book
 
-def wordCount():
+def HtmlWordCount():
   #Open the file and throw an error if the file wasnt succesfully opened. 
   try:
     fin = open('C:\Users\Patri\Desktop\CSUMB\CST205-40_FA17 Multimedia Design & Progmng\eggs.txt','r')
@@ -26,42 +24,39 @@ def wordCount():
   fin.close()
   
   #count of how many total words appear in Green Eggs and Ham/eggs.txt
-  #count = 0
-  #for word in words:
-  # count+=1 
-  #or
   count= len(book.split())
-  print ("There are a total of %s words in Green Eggs and Ham."%count)
   
   #Change all the word to lower case
   words=[]
   for i in diffWords:
     words.append(i.lower())
-    
+  
   #count of how often each of the words appears
   repeatedWords = dict()  #Creat an empty directory
-  for word in words:
+  for word in words:  
     if word not in repeatedWords:  #If word not in the directory create a new item with key word and new value of 1
       repeatedWords[word]=1
     else:                          #If word does exist in the directory increment the key word
       repeatedWords[word]+=1
      
   #Print out the total count and the count for each of the words. 
-  print ("\nHere is a list of the repetead words:")
-  printDict(repeatedWords)
+  #print ("There are a total of %s words in Green Eggs and Ham."%count)
+  #print ("\nHere is a list of the repetead words:")
+  #printDict(repeatedWords)
     
   #Print out the most commonly occuring word in the book
   inverse = invert_dict(repeatedWords) #Invert the dictionary so that the values are the keys and the keys are the values
-  maxKey = max(inverse)  #Find larget key 
+  maxKey = max(inverse)  #Find largest key 
   maxKeyValue = inverse[max(inverse)] #Get the largets keys value
+  
+  #invert again the dictionary again
+  #inverse2nd = invert_dict(inverse)
+  
   #print("\nThe most commonly used word is: ")
   #print(maxValueKey,maxValue)
-  print "\nThe word %s is the most commonly used word and was used %d times."%(maxKeyValue,maxKey)
-##############################################################################################
-#Print a dictionary
-def printDict(d):
-  for key in d:
-    print (key,d[key])
+  #print "\nThe word %s is the most commonly used word and was used %d times."%(maxKeyValue,maxKey)
+  
+  makePage(inverse,count,maxKeyValue,maxKey) 
 #######################################################################################  
 #Invert a Dictionary:
 #Create an empty dictionary.
@@ -78,44 +73,38 @@ def invert_dict(d):
       inverse[val].append(key)
   return inverse
 
-################################################################################################################################
-#Problem 2
-#pull the headlines from the CSU news webpage: https://www2.calstate.edu/csu-system/news
-#Then open the file in JES 
-#Use string processing techniques to extract the headlines from the paper.
-def html2txt():
-  #Open the file and throw an error if the file wasnt succesfully opened. 
-  try:
-    fin = open('C:\Users\Patri\Desktop\CSUMB\CST205-40_FA17 Multimedia Design & Progmng\News.html','r')
-  except:
-    return "Unable to open given file."
-    
-  #Read each line of the file into a variable
-  html = fin.readlines()
+#################################################################################################
+#Function definition to make an HTML page that takes in one parameter, list
+def makePage(d,count,maxKeyValue,maxKey):
+    #Path is the path to where the python script is being run from, with the file name at the end of it.
+    #path = os.path.join(os.getcwd(), 'pythonWebPage-2.html')
+    path='C:\Users\Patri\Desktop\CSUMB\CST205-40_FA17 Multimedia Design & Progmng\GreenEggsAndHam_WebPage.html'
+    #Open the file with write permission
+    file = open(path, "wt")
+    #Begin the writting of the HTML file.
+    file.write("""<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 
+  Transition//EN" "http://www.w3.org/TR/html4/loose.dtd">
   
-  #To hold the full story line in the html file
-  storyLine = []
-  
-  #To hold just the headline text of the html from from the storyLine list
-  headLines = []
-  
-  #close file
-  fin.close()
-  
-  #Capture all the lines in the html that contain the key word story or press release
-  for line in html:
-    if "Story" in line or "Press Release" in line:
-      storyLine.append(line)
-  for line in storyLine:
-    startIndex = line.rfind("<h2>")+4
-    endIndex = line.find("</h2>")
-    headLine = line[startIndex:endIndex]
-    if "<div" not in headLine and "</a>" not in headLine and headLine not in headLines:
-      headLines.append(headLine)
-      
-  print "-----CSU Breaking News!-----"
-  for i in headLines:
-    print i
-  #print words
-  
- 
+  <html>
+  <head><title>I made this page with Python!</title>
+  </head>
+  <body>
+  <p style="color:#339900; font-size:50px; font-weight:bold">Green Eggs and Ham Word Count!</p>
+  """)
+    #Inject our specific headlines that we have that are passed in from the list
+    file.write("<h2>There are a total of %s words in Green Eggs and Ham.<h2>"%count)
+    file.write("<h1>Here is a list of the repetead words:<h1>")
+    for key, value in d.items():
+        if key<12:
+          file.write("""<p style='color:#C4C431; font-size:10px; font-weight:normal'>%s</p>"""%','.join(value))
+        elif key<24:
+          file.write("""<p style='color:#29B3A9; font-size:30px; font-weight:bold'>%s</p>"""%','.join(value))
+        elif key<48:
+          file.write("""<p style='color:#B36E29; font-size:60px; font-weight:normal'>%s</p>"""%','.join(value))
+        else:
+          file.write("""<p style='color:#5EB329; font-size:90px; font-weight:bold'>%s</p>"""%','.join(value))
+    #file.write("""</body>
+    file.write("<h2>\nThe word %s is the most commonly used word and was used %d times.<h2>"%(maxKeyValue,maxKey))
+    file.write("""</body></html>""")
+    file.close()
+#############################################################################################

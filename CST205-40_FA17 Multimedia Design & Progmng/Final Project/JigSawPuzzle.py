@@ -105,12 +105,15 @@ def jigSaw():
   #Keep asking for a move until the player placed all the piece in the right order or unti the player asks to exit the same
   pickApiece=''
   movePieceTo=''
-  while pickApiece != 'exit' or movePieceTo != 'exit': 
+  condition = true
+  #while pickApiece != 'exit' or movePieceTo != 'exit': 
+  while condition:
   #while solved == false: 
-    pickApiece = requestString("beging flag:Swap piece: ").lower()
-    movePieceTo = requestString("begin flag:With piece: ").lower()
+    pickApiece = requestString("Swap piece: ").lower()
+    movePieceTo = requestString("With piece: ").lower()
     if pickApiece == 'exit' or movePieceTo == 'exit':
-      break
+      #break
+      condition = false
     if pickApiece == 'help' or movePieceTo == 'help':
       help() 
     if pickApiece not in legalMoves or movePieceTo not in legalMoves:
@@ -139,12 +142,18 @@ def jigSaw():
       solved = true
       break
   #Find out if the player asked to exit the puzzle or if they solved the puzzle
-  if solved == false:
+  else:
     showInformation("You asked to exit this puzzle. Good Bye.")
     exit
-  elif solved == true:
+  if solved == true:
     showInformation("Nice Job! You put all the piece backtogether.")
     exit
+  #if solved == false:
+  #  showInformation("You asked to exit this puzzle. Good Bye.")
+  #  exit
+  #elif solved == true:
+  #  showInformation("Nice Job! You put all the piece backtogether.")
+  #  exit
   
   
  
