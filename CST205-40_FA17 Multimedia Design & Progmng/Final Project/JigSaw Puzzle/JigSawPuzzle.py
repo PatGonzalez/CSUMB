@@ -1,5 +1,4 @@
 #JigSaw Puzzle
-#Piece of the Final Project
 #By:Patrick Gonzalez
 
 
@@ -7,13 +6,12 @@
 #Main Function  
 #####################################################################################################
 import random
-legalMoves=['1','2','3','4','5','6','7','8','9',]
-exitNhelp =['exit','help']
+legalMoves=['1','2','3','4','5','6','7','8','9']
 
 def jigSaw():
   #Original Image: 5y.jpg 720x540
-  showInformation("Hello Professor,Please choose image file JigSaw_Pic.jpg") 
-  OgPic = makePicture(pickAFile())  
+  showInformation("Hello Professor,Please choose image file JigSaw_Pic.jpg or any image that is 720x540.") 
+  OgPic = makePicture(pickAFile()) 
   #Blank Puzzle board/image that is the same size as the orginal
   puzzleBoard =  makeEmptyPicture(getWidth(OgPic),getHeight(OgPic))
   #Creat an empty dictionary to hold the puzzle pieces
@@ -55,7 +53,7 @@ def jigSaw():
   #show playing board for the first time
   show(puzzleBoard)
   #Display the direction and the layout of the board to the player for the first time
-  help()
+  jigHelp()
   
   #ASk the player for a move, test the input, and if the player made a legal move, then move the piece
   #Keep asking for a move until the player placed all the piece in the right order or unti the player asks to exit the same
@@ -68,11 +66,11 @@ def jigSaw():
     if pickApiece == 'exit' or movePieceTo == 'exit':
       break
     if pickApiece == 'help' or movePieceTo == 'help':
-      help() 
+      jigHelp() 
     if pickApiece not in legalMoves or movePieceTo not in legalMoves:
       showInformation("Im sorry, but one of those was not a legal move.") 
     if pickApiece in legalMoves and movePieceTo in legalMoves:
-      #Convert user inputs to integer to use for the manipulating dictonary keys
+      #Convert user inputs to integer to use for manipulating dictonary keys
       pickedPiece = int(pickApiece)-1
       pieceToMove = int(movePieceTo)-1
       #Swap the pieces
@@ -97,10 +95,12 @@ def jigSaw():
   #Find out if the player asked to exit the puzzle or if they solved the puzzle
   if solved == false:
     showInformation("You asked to exit this puzzle. Good Bye.")
-    exit
+    return false
   elif solved == true:
     showInformation("Nice Job! You put all the piece backtogether.")
-    exit
+    return true
+    
+    
 ##################################################################################################################
 # Supplemental Functions
 ###########################################################################################################
@@ -141,7 +141,7 @@ def compare(pic1,pic2):
   return true
 ################################################################################
 #This function displays How the table is layed out, the list of legal moves and how to input a legal move
-def help(): 
+def jigHelp(): 
   showInformation("Here is how the playing board is laid out.\n [1] [4] [7] \n [2] [5] [8] \n [3] [6] [9] \nYou are only allowed to move one piece at a time.\nHere is an example of a legal move: swap block 1 with block 9.")
   showInformation("The list of legal moves are: 1, 2, 3, 4, 5, 6, 7, 8, 9, exit, help ")
   #for i in legalMoves:
