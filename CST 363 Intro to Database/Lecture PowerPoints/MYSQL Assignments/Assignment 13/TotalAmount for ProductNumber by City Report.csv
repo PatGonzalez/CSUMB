@@ -1,0 +1,49 @@
+CustomerId,CustomerName,City,ProductNumber,ProductName,Year,QuarterText,TotalAmount
+3,"Able Ralph","San Antonio",VB001,"Kitchen Remodeling Basics",2013,Qtr4,7.99
+3,"Able Ralph","San Antonio",VK001,"Kitchen Remodeling Basics",2013,Qtr4,14.95
+3,"Able Ralph","San Antonio",BK001,"Kitchen Remodeling Basics For Everyone",2014,Qtr2,24.95
+3,"Able Ralph","San Antonio",VK002,"Advanced Kitchen Remodeling",2014,Qtr2,29.90
+3,"Able Ralph","San Antonio",VK001,"Kitchen Remodeling Basics",2014,Qtr2,14.95
+3,"Able Ralph","San Antonio",VB002,"Advanced Kitchen Remodeling I",2014,Qtr2,15.98
+3,"Able Ralph","San Antonio",VB001,"Kitchen Remodeling Basics",2014,Qtr2,7.99
+3,"Able Ralph","San Antonio",BK002,"Advanced Kitchen Remodeling For Everyone",2014,Qtr2,24.95
+4,"Baker Susan","San Antonio",VK001,"Kitchen Remodeling Basics",2013,Qtr4,14.95
+4,"Baker Susan","San Antonio",VB001,"Kitchen Remodeling Basics",2013,Qtr4,7.99
+4,"Baker Susan","San Antonio",BK001,"Kitchen Remodeling Basics For Everyone",2013,Qtr4,24.95
+4,"Baker Susan","San Antonio",VK004,"Heather Sweeney Seminar Live in Dallas on 25-OCT-13",2014,Qtr1,24.95
+4,"Baker Susan","San Antonio",VK002,"Advanced Kitchen Remodeling",2014,Qtr1,14.95
+4,"Baker Susan","San Antonio",BK002,"Advanced Kitchen Remodeling For Everyone",2014,Qtr1,24.95
+5,"Eagleton Sam","San Antonio",VK001,"Kitchen Remodeling Basics",2014,Qtr2,14.95
+5,"Eagleton Sam","San Antonio",VB001,"Kitchen Remodeling Basics",2014,Qtr2,7.99
+5,"Eagleton Sam","San Antonio",BK001,"Kitchen Remodeling Basics For Everyone",2014,Qtr2,24.95
+6,"Foxtrot Kathy",Dallas,VK004,"Heather Sweeney Seminar Live in Dallas on 25-OCT-13",2014,Qtr1,24.95
+6,"Foxtrot Kathy",Dallas,VK003,"Kitchen Remodeling Dallas Style",2014,Qtr1,19.95
+6,"Foxtrot Kathy",Dallas,VK002,"Advanced Kitchen Remodeling",2014,Qtr1,14.95
+6,"Foxtrot Kathy",Dallas,VB003,"Kitchen Remodeling Dallas Style",2014,Qtr1,9.99
+6,"Foxtrot Kathy",Dallas,BK002,"Advanced Kitchen Remodeling For Everyone",2014,Qtr1,24.95
+7,"George Sally",Dallas,VK004,"Heather Sweeney Seminar Live in Dallas on 25-OCT-13",2013,Qtr4,24.95
+7,"George Sally",Dallas,VK003,"Kitchen Remodeling Dallas Style",2014,Qtr1,19.95
+7,"George Sally",Dallas,BK002,"Advanced Kitchen Remodeling For Everyone",2014,Qtr1,24.95
+7,"George Sally",Dallas,BK001,"Kitchen Remodeling Basics For Everyone",2014,Qtr1,24.95
+7,"George Sally",Dallas,VK004,"Heather Sweeney Seminar Live in Dallas on 25-OCT-13",2014,Qtr1,24.95
+8,"Hullett Shawn",Dallas,VK004,"Heather Sweeney Seminar Live in Dallas on 25-OCT-13",2014,Qtr2,24.95
+8,"Hullett Shawn",Dallas,VK003,"Kitchen Remodeling Dallas Style",2014,Qtr2,19.95
+8,"Hullett Shawn",Dallas,VB003,"Kitchen Remodeling Dallas Style",2014,Qtr2,9.99
+1,"Jacobs Nancy","Fort Worth",VK001,"Kitchen Remodeling Basics",2014,Qtr2,14.95
+1,"Jacobs Nancy","Fort Worth",VB001,"Kitchen Remodeling Basics",2014,Qtr2,7.99
+1,"Jacobs Nancy","Fort Worth",BK001,"Kitchen Remodeling Basics For Everyone",2014,Qtr2,24.95
+9,"Pearson Bobbi",Auston,VK001,"Kitchen Remodeling Basics",2014,Qtr1,14.95
+9,"Pearson Bobbi",Auston,VB001,"Kitchen Remodeling Basics",2014,Qtr1,7.99
+9,"Pearson Bobbi",Auston,BK001,"Kitchen Remodeling Basics For Everyone",2014,Qtr1,24.95
+9,"Pearson Bobbi",Auston,VK002,"Advanced Kitchen Remodeling",2014,Qtr2,14.95
+9,"Pearson Bobbi",Auston,VB002,"Advanced Kitchen Remodeling I",2014,Qtr2,7.99
+11,"Tyler Jenny",Dallas,VK002,"Advanced Kitchen Remodeling",2014,Qtr2,29.90
+11,"Tyler Jenny",Dallas,VB002,"Advanced Kitchen Remodeling I",2014,Qtr2,15.98
+11,"Tyler Jenny",Dallas,VK004,"Heather Sweeney Seminar Live in Dallas on 25-OCT-13",2014,Qtr2,49.90
+11,"Tyler Jenny",Dallas,VK003,"Kitchen Remodeling Dallas Style",2014,Qtr2,39.90
+11,"Tyler Jenny",Dallas,VB003,"Kitchen Remodeling Dallas Style",2014,Qtr2,19.98
+12,"Wayne Joan","Fort Worth",VK004,"Heather Sweeney Seminar Live in Dallas on 25-OCT-13",2014,Qtr2,24.95
+12,"Wayne Joan","Fort Worth",VK003,"Kitchen Remodeling Dallas Style",2014,Qtr2,19.95
+12,"Wayne Joan","Fort Worth",VK002,"Advanced Kitchen Remodeling",2014,Qtr2,14.95
+12,"Wayne Joan","Fort Worth",VB003,"Kitchen Remodeling Dallas Style",2014,Qtr2,9.99
+12,"Wayne Joan","Fort Worth",BK002,"Advanced Kitchen Remodeling For Everyone",2014,Qtr2,24.95
